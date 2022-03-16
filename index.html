@@ -52,7 +52,22 @@
     <section class="hero">
         <div class="container">
             <h1 class="title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h1>
-            <button class="btn-hero" type="button">Заказать услугу</button>
+            <button class="btn-hero" type="button" data-modal-open>Заказать услугу</button>
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal">
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, esse!
+                        Aut officia itaque aperiam repellat dolorum, voluptatem modi harum cupiditate.
+                        Placeat maiores eligendi porro suscipit velit? Fugiat ratione optio adipisci!
+                        Qui earum ea quidem soluta voluptatum aut impedit deleniti iure?
+                        Nam corrupti fuga illum quidem expedita voluptatibus assumenda corporis libero!
+                        Corrupti vero pariatur ullam maiores repudiandae animi sint, officia dolor.
+                        Repellendus sint tempora in quibusdam aliquid quisquam, deleniti libero odit.
+                        Enim ducimus corrupti rem quia illum saepe obcaecati dolorem porro!
+                    </p>
+                    <button data-modal-close>ЗАКРЫТЬ</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -106,9 +121,25 @@
         <div class="container">
             <h2 class="section-title">Чем мы занимаемся</h2>
             <ul class="our-activities list">
-                <li><img src="./images/creating.jpg" alt="Верстка сайта" width="370" height="294"></li>
-                <li><img src="./images/select.jpg" alt="Выбор интерфейса для мобильного устройства" width="370" height="294"></li>
-                <li><img src="./images/graphic.jpg" alt="Работа с графикой" width="370" height="294"></li>
+                <li>
+                    <div class="image-position">
+                        <img src="./images/creating.jpg" alt="Верстка сайта" width="370" height="294">
+                        <p class="position-item">Десктопные приложения</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image-position">
+                    <img src="./images/select.jpg" alt="Выбор интерфейса для мобильного устройства" width="370" height="294">
+                    <p class="position-item">Мобильные приложения</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image-position">
+                    <img src="./images/graphic.jpg" alt="Работа с графикой" width="370" height="294">
+                    <p class="position-item">Дизайнерские решения</p>
+                    </div>
+                </li>
+                
             </ul>
         </div>
     </section>
@@ -371,5 +402,19 @@
             </div>
         </div>
     </footer>
+    <script>
+        const refs = {
+                openModalBtn: document.querySelector('[data-modal-open]'),
+                closeModalBtn: document.querySelector('[data-modal-close]'),
+                modal: document.querySelector('[data-modal]'),
+            };
+
+            refs.openModalBtn.addEventListener('click', toggleModal);
+            refs.closeModalBtn.addEventListener('click', toggleModal);
+
+            function toggleModal() {
+                refs.modal.classList.toggle('is-hidden');
+            }
+    </script>
 </body>
 </html>
