@@ -136,7 +136,6 @@ img {
   color: var(--logo-color);
 }
 .nav-menu {
-  display: flex;
 }
 .nav-list-item .link {
   display: block;
@@ -157,9 +156,13 @@ img {
   color: var(--accent-color);
 }
 /* Доработать*/
+.nav-list-item {
+}
 .active {
+  display: flex;
 }
 .active::after {
+  bottom: 0;
   display: block;
   content: '';
   height: 4px;
